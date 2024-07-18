@@ -6,8 +6,9 @@ const bcrypt = require('bcrypt');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
-const SECRET_KEY = 'your_secret_key';
+const SECRET_KEY = process.env.SECRET_KEY || 'secret_key';
+const PORT = process.env.PORT || 3000;
+
 
 app.use(cors());
 app.use(bodyParser.json());
